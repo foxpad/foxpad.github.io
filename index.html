@@ -144,7 +144,9 @@
 
         btn.onclick = function () {
             container.style.transform = "rotate(" + number + "deg)";
-            number += Math.ceil(Math.random() + 1000)
+            let fortune_result = Math.ceil((390 - number % 360) / 60);
+            tg.sendData(fortune_result);
+            tg.close();
         }
     </script>
 </body>
