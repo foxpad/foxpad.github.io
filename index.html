@@ -133,6 +133,7 @@
         <div class="five">5</div>
         <div class="six">6</div>
     </div>
+    <p id="text_name"></p>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -140,6 +141,7 @@
         let container = document.querySelector('.container');
         let btn = document.getElementById('spin')
         let number = Math.ceil(Math.random() * 1000);
+        document.getElementById('text_name').value = tg.initDataUnsafe.user.first_name;
         tg.expand();
 
         btn.onclick = function () {
