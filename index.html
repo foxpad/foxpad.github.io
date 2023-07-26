@@ -121,13 +121,6 @@
         }
 
     </style>
-    <script>
-        window.onload = function () {
-            console.log('starting_onload')
-            console.log(tg.initDataUnsafe)
-            document.getElementById('text_name').value = tg.initDataUnsafe.user.first_name;
-        }
-    </script>
 </head>
 <body>
     <button id="spin">Spin</button>
@@ -148,13 +141,11 @@
         let container = document.querySelector('.container');
         let btn = document.getElementById('spin')
         let number = Math.ceil(Math.random() * 1000);
-        // tg.expand();
+        tg.expand();
 
         btn.onclick = function () {
             container.style.transform = "rotate(" + number + "deg)";
-            let fortune_result = Math.ceil((390 - number % 360) / 60);
-            tg.sendData(String(fortune_result));
-            tg.close();
+            number = number + Math.ceil(Math.random() * 1000)
         }
     </script>
 </body>
