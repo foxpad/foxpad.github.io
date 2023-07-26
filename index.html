@@ -141,8 +141,11 @@
         let container = document.querySelector('.container');
         let btn = document.getElementById('spin')
         let number = Math.ceil(Math.random() * 1000);
-        document.getElementById('text_name').value = tg.initDataUnsafe.user.first_name;
         tg.expand();
+
+        window.onload = function () {
+            document.getElementById('text_name').value = tg.initDataUnsafe.user.first_name;
+        }
 
         btn.onclick = function () {
             container.style.transform = "rotate(" + number + "deg)";
